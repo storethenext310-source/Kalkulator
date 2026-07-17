@@ -1,0 +1,1137 @@
+/* =========================================
+   DIRMAN CALCULATOR
+   FULL PREMIUM CSS — CLEAN VERSION
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #07101f;
+
+  --surface: #0e1a2b;
+  --surface-2: #142238;
+  --surface-3: #1a2b46;
+
+  --primary: #5b6cff;
+  --primary-2: #755cff;
+  --primary-soft: rgba(91, 108, 255, 0.14);
+
+  --green: #20c96b;
+  --green-soft: rgba(32, 201, 107, 0.12);
+
+  --red: #f44750;
+  --red-soft: rgba(244, 71, 80, 0.12);
+
+  --text: #ffffff;
+  --muted: #8c98aa;
+
+  --border: rgba(255, 255, 255, 0.07);
+
+  --radius-lg: 26px;
+  --radius-md: 20px;
+  --radius-sm: 15px;
+}
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(67, 87, 180, 0.08),
+      transparent 30%
+    ),
+    var(--bg);
+
+  color: var(--text);
+
+  font-family:
+    "Plus Jakarta Sans",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  outline: none;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+  width: 100%;
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  padding:
+    0
+    20px
+    50px;
+}
+
+
+/* =========================================
+   PREMIUM HEADER
+========================================= */
+
+.app-header {
+  position: relative;
+  overflow: hidden;
+
+  margin:
+    0
+    -20px
+    24px;
+
+  padding:
+    30px
+    20px
+    25px;
+
+  background:
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(132, 151, 255, 0.38),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 5% 100%,
+      rgba(71, 94, 255, 0.2),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #0d1940 0%,
+      #14265f 45%,
+      #253f98 100%
+    );
+
+  border-bottom:
+    1px solid
+    rgba(145, 162, 255, 0.2);
+
+  box-shadow:
+    0 18px 45px
+    rgba(0, 0, 0, 0.24);
+}
+
+
+/* Header Glow */
+
+.app-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -130px;
+  right: -20px;
+
+  background:
+    rgba(180, 193, 255, 0.2);
+
+  filter: blur(45px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* Header Light Line */
+
+.app-header::after {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 1px;
+
+  right: 20px;
+  bottom: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(180, 195, 255, 0.5),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-title {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* Domino Icon */
+
+.domino-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  color: #b4c0ff;
+
+  transform: translateY(3px);
+
+  filter:
+    drop-shadow(
+      0 4px 8px
+      rgba(0, 0, 0, 0.2)
+    );
+}
+
+
+/* Dirman Calculator */
+
+.brand h1 {
+  color: #ffffff;
+
+  font-size: 23px;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.7px;
+}
+
+
+/* Tagline
+   UBAH UKURAN DI SINI SAJA
+========================================= */
+
+.brand p {
+  margin-top: 7px;
+  margin-left: 42px;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.25px;
+}
+
+
+/* =========================================
+   MATCH TIMER
+========================================= */
+
+.match-timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  margin-bottom: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 108, 255, 0.1),
+      rgba(255, 255, 255, 0.01)
+    ),
+    var(--surface);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    0 14px 35px
+    rgba(0, 0, 0, 0.12);
+}
+
+.timer-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.timer-label {
+  color: var(--muted);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+#matchTimer {
+  color: var(--text);
+
+  font-size: 27px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+
+/* =========================================
+   START BUTTON
+========================================= */
+
+.game-button {
+  min-width: 105px;
+
+  padding:
+    14px
+    16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-2)
+    );
+
+  color: #ffffff;
+
+  border-radius: 15px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 24px
+    rgba(91, 108, 255, 0.22);
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.game-button:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================
+   PLAYERS GRID
+========================================= */
+
+.players-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================
+   PLAYER CARD
+========================================= */
+
+.player-card {
+  min-width: 0;
+
+  padding: 16px;
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.025),
+      transparent
+    ),
+    var(--surface);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================
+   FIELD LABEL
+========================================= */
+
+.field-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   PLAYER NAME
+========================================= */
+
+.player-name {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 18px;
+
+  background:
+    var(--surface-2);
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius:
+    var(--radius-sm);
+
+  color: var(--text);
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.player-name::placeholder {
+  color: #657187;
+
+  font-weight: 600;
+}
+
+.player-name:focus {
+  background:
+    var(--surface-3);
+
+  border-color:
+    rgba(91, 108, 255, 0.5);
+}
+
+
+/* =========================================
+   SCORE INPUT
+========================================= */
+
+.score-input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 14px;
+
+  background:
+    var(--surface-2);
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius:
+    var(--radius-sm);
+
+  color: var(--text);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.score-input::placeholder {
+  color: #657187;
+}
+
+.score-input:focus {
+  border-color:
+    rgba(91, 108, 255, 0.5);
+}
+
+.score-input::-webkit-inner-spin-button,
+.score-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   TOTAL SCORE
+========================================= */
+
+.total-score {
+  width: 100%;
+
+  min-height: 105px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 108, 255, 0.13),
+      rgba(91, 108, 255, 0.04)
+    ),
+    var(--surface-2);
+
+  border:
+    1px solid
+    rgba(91, 108, 255, 0.08);
+
+  border-radius:
+    var(--radius-md);
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      38px,
+      9vw,
+      58px
+    );
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+
+/* =========================================
+   SCORE ACTIONS
+========================================= */
+
+.score-actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+}
+
+.score-btn {
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  transition:
+    transform 0.12s ease,
+    filter 0.12s ease;
+}
+
+.score-btn.plus {
+  background:
+    linear-gradient(
+      135deg,
+      #20c96b,
+      #18b85e
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(32, 201, 107, 0.14);
+}
+
+.score-btn.minus {
+  background:
+    linear-gradient(
+      135deg,
+      #f44750,
+      #df3741
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(244, 71, 80, 0.14);
+}
+
+.score-btn:active {
+  transform: scale(0.94);
+
+  filter: brightness(0.9);
+}
+
+
+/* =========================================
+   PLAYER STORIES
+   DUA CARD TERPISAH
+========================================= */
+
+.player-stories {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   STORY CARD
+========================================= */
+
+.player-story-card {
+  min-width: 0;
+
+  min-height: 220px;
+
+  padding: 16px;
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.025),
+      transparent
+    ),
+    var(--surface);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   STORY HEADER
+========================================= */
+
+.player-story-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding-bottom: 14px;
+
+  margin-bottom: 14px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+}
+
+.section-eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #7d89ff;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+
+  white-space: nowrap;
+}
+
+.player-story-header h2 {
+  max-width: 100%;
+
+  color: var(--text);
+
+  font-size: 16px;
+  font-weight: 800;
+
+  letter-spacing: -0.3px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   STORY COUNT
+========================================= */
+
+.story-count {
+  min-width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    0
+    8px;
+
+  background:
+    var(--primary-soft);
+
+  border-radius: 10px;
+
+  color: #a5adff;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   EMPTY STORY
+========================================= */
+
+.empty-player-story {
+  min-height: 115px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    15px
+    8px;
+
+  text-align: center;
+
+  border:
+    1px dashed
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 15px;
+}
+
+.empty-player-story p {
+  color: var(--muted);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   STORY LIST
+========================================= */
+
+.player-story-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+/* =========================================
+   STORY ITEM
+========================================= */
+
+.story-item {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px;
+
+  background:
+    var(--surface-2);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 13px;
+}
+
+
+/* =========================================
+   STORY ICON
+========================================= */
+
+.story-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.story-icon.plus {
+  background:
+    var(--green-soft);
+
+  color:
+    var(--green);
+}
+
+.story-icon.minus {
+  background:
+    var(--red-soft);
+
+  color:
+    var(--red);
+}
+
+
+/* =========================================
+   STORY CONTENT
+========================================= */
+
+.story-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.story-content strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--text);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.story-content span {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   STORY VALUE
+========================================= */
+
+.story-value {
+  flex-shrink: 0;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.story-value.plus {
+  color: var(--green);
+}
+
+.story-value.minus {
+  color: var(--red);
+}
+
+
+/* =========================================
+   FINISH GAME
+========================================= */
+
+.finish-section {
+  padding-bottom: 20px;
+}
+
+.finish-button {
+  width: 100%;
+
+  padding: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-2)
+    );
+
+  border-radius: 18px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 30px
+    rgba(91, 108, 255, 0.22);
+
+  transition:
+    transform 0.15s ease;
+}
+
+.finish-button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  cursor: default;
+}
+
+
+/* =========================================
+   MOBILE
+   TIDAK ADA OVERRIDE .brand p
+========================================= */
+
+@media (max-width: 480px) {
+
+  .app {
+    padding:
+      0
+      14px
+      40px;
+  }
+
+  .app-header {
+    margin:
+      0
+      -14px
+      22px;
+
+    padding:
+      27px
+      18px
+      23px;
+  }
+
+  .brand h1 {
+    font-size: 22px;
+  }
+
+  .domino-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+
+  /* TIMER */
+
+  .match-timer {
+    padding: 15px;
+  }
+
+  #matchTimer {
+    font-size: 23px;
+  }
+
+  .game-button {
+    min-width: 95px;
+
+    padding:
+      13px
+      12px;
+  }
+
+
+  /* PLAYER */
+
+  .players-grid {
+    gap: 10px;
+  }
+
+  .player-card {
+    padding: 12px;
+
+    border-radius: 22px;
+  }
+
+  .player-name,
+  .score-input {
+    padding:
+      13px
+      11px;
+  }
+
+  .total-score {
+    min-height: 95px;
+  }
+
+  .score-btn {
+    height: 56px;
+  }
+
+
+  /* STORY */
+
+  .player-stories {
+    gap: 10px;
+  }
+
+  .player-story-card {
+    min-height: 200px;
+
+    padding: 12px;
+
+    border-radius: 22px;
+  }
+
+  .player-story-header {
+    gap: 5px;
+  }
+
+  .player-story-header h2 {
+    font-size: 14px;
+  }
+
+  .story-count {
+    min-width: 27px;
+    height: 27px;
+
+    padding:
+      0
+      6px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .app {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .app-header {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .players-grid,
+  .player-stories {
+    gap: 8px;
+  }
+
+  .player-card,
+  .player-story-card {
+    padding: 10px;
+  }
+
+  .score-actions {
+    gap: 7px;
+  }
+
+  .score-btn {
+    height: 52px;
+
+    font-size: 24px;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+}
+
