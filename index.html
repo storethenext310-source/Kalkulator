@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#14265f">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
+>
+
+<meta
+  name="apple-mobile-web-app-title"
+  content="Dirman Calculator"
+>
+
+  <title>Dirman Calculator</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+  <main class="app">
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="app-header">
+
+      <div class="brand">
+
+  <div class="brand-title">
+
+    <svg class="domino-icon" viewBox="0 0 24 24" fill="none">
+      <rect
+        x="6"
+        y="2"
+        width="12"
+        height="20"
+        rx="3"
+        stroke="currentColor"
+        stroke-width="1.8"
+      />
+
+      <path
+        d="M6 12H18"
+        stroke="currentColor"
+        stroke-width="1.8"
+      />
+
+      <circle cx="9" cy="6" r="1" fill="currentColor"/>
+      <circle cx="15" cy="9" r="1" fill="currentColor"/>
+
+      <circle cx="9" cy="15" r="1" fill="currentColor"/>
+      <circle cx="15" cy="15" r="1" fill="currentColor"/>
+      <circle cx="12" cy="19" r="1" fill="currentColor"/>
+    </svg>
+
+    <h1>
+      Dirman Calculator
+    </h1>
+
+  </div>
+
+  <p>
+    Peh aju, kajeut long hitoeng jinoe
+  </p>
+
+</div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MATCH TIMER
+    ========================== -->
+
+    <section class="match-timer">
+
+      <div class="timer-info">
+
+        <span class="timer-label">
+          Bek lambat, watei ijak
+        </span>
+
+        <strong id="matchTimer">
+          00:00:00
+        </strong>
+
+      </div>
+
+
+      <button
+        id="startGameBtn"
+        class="game-button"
+        type="button"
+      >
+        Mulai Game
+      </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         PLAYERS
+    ========================== -->
+
+    <section class="players-grid">
+
+
+      <!-- PLAYER 1 -->
+
+      <article
+        class="player-card"
+        data-player="1"
+      >
+
+        <label class="field-label">
+          Nan Awak Mien
+        </label>
+
+        <input
+          id="player1Name"
+          class="player-name"
+          type="text"
+          placeholder="Nama"
+          autocomplete="off"
+        >
+
+
+        <label class="field-label">
+          Tuleh
+        </label>
+
+        <input
+          id="player1Input"
+          class="score-input"
+          type="number"
+          inputmode="numeric"
+          placeholder="0"
+        >
+
+
+        <div
+          id="player1Score"
+          class="total-score"
+        >
+          0
+        </div>
+
+
+        <div class="score-actions">
+
+          <button
+            class="score-btn plus"
+            type="button"
+            data-action="plus"
+            data-player="1"
+          >
+            +
+          </button>
+
+
+          <button
+            class="score-btn minus"
+            type="button"
+            data-action="minus"
+            data-player="1"
+          >
+            −
+          </button>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PLAYER 2 -->
+
+      <article
+        class="player-card"
+        data-player="2"
+      >
+
+        <label class="field-label">
+          Nan Awak Mien
+        </label>
+
+        <input
+          id="player2Name"
+          class="player-name"
+          type="text"
+          placeholder="Nama"
+          autocomplete="off"
+        >
+
+
+        <label class="field-label">
+          Tuleh
+        </label>
+
+        <input
+          id="player2Input"
+          class="score-input"
+          type="number"
+          inputmode="numeric"
+          placeholder="0"
+        >
+
+
+        <div
+          id="player2Score"
+          class="total-score"
+        >
+          0
+        </div>
+
+
+        <div class="score-actions">
+
+          <button
+            class="score-btn plus"
+            type="button"
+            data-action="plus"
+            data-player="2"
+          >
+            +
+          </button>
+
+
+          <button
+            class="score-btn minus"
+            type="button"
+            data-action="minus"
+            data-player="2"
+          >
+            −
+          </button>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+
+    <!-- =========================
+         PLAYER STORIES
+         DUA CARD TERPISAH
+    ========================== -->
+
+    <section class="player-stories">
+
+
+      <!-- STORY PLAYER 1 -->
+
+      <article class="player-story-card">
+
+        <div class="player-story-header">
+
+          <div>
+
+            <span class="section-eyebrow">
+              JUMLAH LOEP
+            </span>
+
+            <h2 id="player1StoryName">
+              Pemain 1
+            </h2>
+
+          </div>
+
+
+          <span
+            id="player1StoryCount"
+            class="story-count"
+          >
+            0
+          </span>
+
+        </div>
+
+
+        <div
+          id="player1EmptyStory"
+          class="empty-player-story"
+        >
+
+          <p>
+            Belum ada skor
+          </p>
+
+        </div>
+
+
+        <div
+          id="player1StoryList"
+          class="player-story-list"
+        >
+        </div>
+
+      </article>
+
+
+
+      <!-- STORY PLAYER 2 -->
+
+      <article class="player-story-card">
+
+        <div class="player-story-header">
+
+          <div>
+
+            <span class="section-eyebrow">
+              JUMLAH LOEP
+            </span>
+
+            <h2 id="player2StoryName">
+              Pemain 2
+            </h2>
+
+          </div>
+
+
+          <span
+            id="player2StoryCount"
+            class="story-count"
+          >
+            0
+          </span>
+
+        </div>
+
+
+        <div
+          id="player2EmptyStory"
+          class="empty-player-story"
+        >
+
+          <p>
+            Belum ada skor
+          </p>
+
+        </div>
+
+
+        <div
+          id="player2StoryList"
+          class="player-story-list"
+        >
+        </div>
+
+      </article>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FINISH GAME
+    ========================== -->
+
+    <section class="finish-section">
+
+      <button
+        id="finishGameBtn"
+        class="finish-button"
+        type="button"
+      >
+       Munyoe kabeh riset sigoe, Abeh nyan refress
+      </button>
+
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
